@@ -178,3 +178,108 @@ La prioridad de resoluciòn del defecto va a ser determinada por el Issue Coordi
 ######Página 5
 </center>
 ----------
+
+#Esquema de directorios
+
+El esquema de directorios que se va a usar va a ser el típico de un proyecto java con Maven. Esto seria: un directorio src/main/java en la cual se almacena el código,  otro src/main/resourses para los recursos que se usan en el código java y otro src/main/test para todos los tests unitarios. (véase la imagen).
+<br />
+
+![Directorios](/src/resources/directorios.jpg "Directorios")
+
+
+#Normas de Etiquetado y Nombramiento de Archivos
+
+...
+
+
+<br />
+<br />
+<center>
+######Página 6
+</center>
+----------
+#Plan del esquema de ramas a usar
+
+...
+
+
+#Política de fusión de archivos y etiquetado
+
+
+La fusión de archivos se realizará a base de los tipos de cambios que se iran realizando en los CI correspondientes. 
+
+Luego de las consultas necesarias con los miembros de trabajo y a partir de las necesidades requeridas por los clientes o por la exigencia de reparación de algun inconveniente o actualización del proyecto, se trabajarán en distintas funcionalidades que se desarrollaran en ramas o branchs del thread master inicial para luego acoplarse a éste segun ya esten completos los cambios y las necesidades que se requerian en un principio y que llevaron a cabo su desarrollo.
+
+Los etiquetados, tags o label se realizaran cada vez que el proyecto se encuentre en un estado que cumpla con las exigencias o requerimientos por las que fueron ejecutadas su desarrollo en base a la necesidad originaria, describiendo adecuadamente las caracteristicas de las nuevas versiones producidas, como asi tambien los datos de miembros de trabajo involucrados, respetando un orden cronologico en los nombres correspondientes y teniendo en cuenta de respetar siempre la integridad del proyecto en su conjunto y totalidad.
+<br />
+<br />
+<center>
+######Página 7
+</center>
+----------
+#Gestion de lanzamiento de releases (cambios o agregados al proyecto)
+
+Este proceso es el responsable de planear, distribuir, y controlar la construccion, el testeo y los lanzamientos de "releases" asi como tambien del envio de nuevas funcionalidades al proyecto que sean requeridas por los clientes que usaran el producto siempre teniendo en cuenta de proteger y mantener la integridad de los servicios y features existentes. 
+
+Para asegurar que sean elegidos los CI adecuados para ser "release" y evitar fallas o errores durante el proceso de implementacion, la gestion de release debe verificar la correcta funcionalidad y su uso antes de la entrega mediante pruebas y tests.
+
+El plan para la realizacion de los release debe definir:
+
+-	Alcance y contenido del release
+-	Evaluacion de riesgo y perfil de riesgo para el release
+-	Usuarios/clientes afectados.
+-	Miembros de la CAB (Change Advisory Board) que aprobaron la recomendacion para el release
+-	Equipo responsable del release
+-	Estrategia de lanzamiento
+-	Recursos disponibles 
+	
+ A su vez las actividades del proceso de entrega y desarrollo incluyen:
+
+1.	Construir y probar antes de realizar el despliegue de produccion
+2.	Crear pilotos de prueba
+3.	Logistica y plan de envio:
+4.	Como y donde seran enviadas las unidades de release
+5.	Como son los plazos de entrega
+6.	Como llevar un rastreo  del envio y obtener informacion de confirmacion
+7.	Metricas para el seguimiento y la determinacion del exito de los esfuerzos   de implementacion del release.
+8.	Desarrollo y testeo de los releases
+9.	Documentacion del release y su construccion
+10.	Lanzamiento del packaging del release
+
+
+
+
+<br />
+<br />
+<center>
+######Página 8
+</center>
+----------
+
+#Change Control Board
+ 
+La CCB es el grupo encargado de verificar y autorizar cada cambio que se quiera realizar sobre el plan, el producto,  el código o la documentación del mismo. Ningún cambio que tenga consecuencias o que produzca conflictos con el cliente o con algún miembro del personal que esté trabajando en el proyecto puede ser realizado sin la autorización de la CCB.
+
+Las decisiones deben ser tomadas teniendo en cuenta las posibles consecuencias políticas o económicas que los cambios puedan ocasionar tanto con el cliente como con los miembros del proyecto.
+
+La CCB evaluará cada pedido de cambio que se realice a cualquier miembro de la CCB, este pedido tendrá que ser realizado por escrito detallando los cambios que se quieren implementar.
+
+###Miembros de la CCB
+
+**Engineering Manager – CCB Chair:** Su presencia es indispensable para realizar un control de cambios. Es el que dirige la CCB y es el que se encarga de coordinar las distintas áreas involucradas en el proyecto por lo tanto conoce las incidencias que un cambio puede causar en todas las áreas. En caso de no poder asistir tiene que autorizar a otro miembro de la CCB a ocupar su lugar.
+
+**Release Manager – Issue Coordinator:** Su presencia es indispensable para realizar un control de cambios. Es el encargado de coordinar la forma en la cual se hacen y se entregan los realeases. Además se encargar de coordinar y solucionar todos los problemas que puedan surgir una vez realizados los cambios.
+
+**Uber Scrum Team:** Su presencia es indispensable para realizar un control de cambios.  Es el encargado de coordinar a todos los Scrum Masters de la empresa,  y por lo tanto tiene un conocimiento de cómo afectarán los cambio con otros proyectos.
+
+**Director Grafico:** Su presencia es opcional en caso que se lo requiera. En caso de necesitar realizar cambios que involucren la parte gráfica del proyecto es necesaria su participación.
+
+**Configuration Manager:** Su presencia es opcional en el caso que se lo requiera. En el caso que los cambios a realizar involucren alguna parte del CM Plan es necesario su participación ya que es la persona que lo diseño.
+
+###Periodicidad de la reuniones de la CCB
+
+Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrollo del proyecto, con la posibilidad de llamar a reuniones especiales en caso de ser necesario avisando por email o por teléfono con 24hs de antelación.
+<br />
+<center>
+######Página 9
+</center>
