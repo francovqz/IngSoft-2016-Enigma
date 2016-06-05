@@ -181,10 +181,10 @@ La prioridad de resoluciòn del defecto va a ser determinada por el Issue Coordi
 
 #Esquema de directorios
 
-El esquema de directorios que se va a usar va a ser el típico de un proyecto java con Maven. Esto seria: un directorio src/main/java en la cual se almacena el código,  otro src/main/resourses para los recursos que se usan en el código java y otro src/main/test para todos los tests unitarios. (véase la imagen).
+El esquema de directorios que se va a usar va a ser el típico de un proyecto java con Maven. Esto seria: un directorio src/main/java en la cual se almacena el código,   src/main/resourses para los recursos que se usan en el código java, src/test/java y src/test/resources para el código y recursos de los tests respectivamente . (véase la imagen).
 <br />
 
-![Directorios](/src/resources/directorios.jpg "Directorios")
+![Directorios](/resources/directorios.jpg "Directorios")
 
 
 #Normas de Etiquetado y Nombramiento de Archivos
