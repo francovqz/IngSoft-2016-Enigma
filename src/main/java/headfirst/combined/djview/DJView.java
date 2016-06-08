@@ -11,6 +11,8 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
     JPanel viewPanel;
 	BeatBar beatBar;
 	JLabel bpmOutputLabel;
+    JLabel anotadorOutputLabel;
+    JLabel anotadorLabel;
     JFrame controlFrame;
     JPanel controlPanel;
     JLabel bpmLabel;
@@ -37,12 +39,18 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewFrame.setSize(new Dimension(100, 80));
         bpmOutputLabel = new JLabel("offline", SwingConstants.CENTER);
+        anotadorLabel = new JLabel("Jugador1  -  Jugador2", SwingConstants.CENTER);
+        anotadorOutputLabel = new JLabel("0" + "  -  " + "0", SwingConstants.CENTER);
 		beatBar = new BeatBar();
 		beatBar.setValue(0);
-        JPanel bpmPanel = new JPanel(new GridLayout(2, 1));
+        JPanel bpmPanel = new JPanel(new GridLayout(4, 2));
 		bpmPanel.add(beatBar);
         bpmPanel.add(bpmOutputLabel);
+        bpmPanel.add(anotadorLabel);
+        bpmPanel.add(anotadorOutputLabel);
         viewPanel.add(bpmPanel);
+    //    JPanel anotadorPanel = new JPanel(new GridLayout(3, 1));
+       // viewPanel.add(anotadorPanel);
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
         viewFrame.pack();
         viewFrame.setVisible(true);
@@ -160,7 +168,16 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
 			}
 		}
 	}
-  
+    public void updateAnotador(){
+        if (model != null) {
+            int uno = model.getBPM();
+            int dos = model.getBPM();
+            anotadorOutputLabel.setText(uno + " - " + dos);
+
+        }
+    }
+
+
 	public void updateBeat() {
 		if (beatBar != null) {
 			 beatBar.setValue(100);
