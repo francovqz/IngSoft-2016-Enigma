@@ -2,17 +2,17 @@ package headfirst.combined.djview;
 
 
 public class MyAnotadorController implements ControllerInterface{
-    BeatModelInterface model;
+    MyAnotadorInterface model;
     DJView view;
 
-    public MyAnotadorController(){
+    public MyAnotadorController(MyAnotadorInterface model){
         this.model = model;
-        view = new DJView(this, model);
+        view = new DJView(this, new MyAnotadorAdapter(model));
         view.createView();
         view.createControls();
         view.disableStopMenuItem();
         view.enableStartMenuItem();
-        model.initialize();
+        //model.initialize();
     }
 
     public void start(){
@@ -25,7 +25,15 @@ public class MyAnotadorController implements ControllerInterface{
         view.disableStopMenuItem();
         view.enableStartMenuItem();
     }
-    public void increaseBPM(){}
-    public void decreaseBPM(){}
+    public void increaseBPM(){increasePlayer2();}
+    public void decreaseBPM(){increasePlayer1();}
     public void setBPM(int bpm){}
+    public void increasePlayer1(){
+        int ju1 = model.getJUG1();
+        model.setJUG1(ju1 + 1);
+    }
+    public void increasePlayer2(){
+        int ju2 = model.getJUG2();
+        model.setJUG2(ju2 + 1);
+    }
 }

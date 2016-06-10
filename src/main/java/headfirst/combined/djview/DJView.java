@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DJView implements ActionListener,  BeatObserver, BPMObserver {
+public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1Observer,JUG2Observer {
 	BeatModelInterface model;
 	ControllerInterface controller;
     JFrame viewFrame;
@@ -25,11 +25,13 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
 
-    public DJView(ControllerInterface controller, BeatModelInterface model) {	
+    public DJView(ControllerInterface controller, BeatModelInterface model) {
 		this.controller = controller;
 		this.model = model;
 		model.registerObserver((BeatObserver)this);
 		model.registerObserver((BPMObserver)this);
+        model.registerObserver((JUG1Observer)this);
+        model.registerObserver((JUG2Observer)this);
     }
     
     public void createView() {
@@ -168,12 +170,20 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
 			}
 		}
 	}
-    public void updateAnotador(){
+    public void updateJUG1(){
         if (model != null) {
-            int uno = model.getBPM();
-            int dos = model.getBPM();
+            int uno = model.getJUG1();
+            int dos = model.getJUG2();
             anotadorOutputLabel.setText(uno + " - " + dos);
+        }
+    }
 
+
+    public void updateJUG2(){
+        if (model != null) {
+            int uno = model.getJUG1();
+            int dos = model.getJUG2();
+            anotadorOutputLabel.setText(uno + " - " + dos);
         }
     }
 

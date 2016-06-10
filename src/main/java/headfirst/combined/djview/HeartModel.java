@@ -76,4 +76,10 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			observer.updateBPM();
 		}
 	}
+	public void registerObserver(JUG1Observer o) {}
+	public void registerObserver(JUG2Observer o) {}
+	public void removeObserver(JUG1Observer o){}
+	public void removeObserver(JUG2Observer o){}
+	public int getJUG1(){return 0; }
+	public int getJUG2(){return 0;}
 }
