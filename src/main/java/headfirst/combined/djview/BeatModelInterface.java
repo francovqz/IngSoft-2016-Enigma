@@ -10,6 +10,9 @@ public interface BeatModelInterface {
     void setBPM(int bpm);
   
 	int getBPM();
+	int getJUG1();
+	int getJUG2();
+	String getName();
   
 	void registerObserver(BeatObserver o);
   
@@ -18,4 +21,10 @@ public interface BeatModelInterface {
 	void registerObserver(BPMObserver o);
   
 	void removeObserver(BPMObserver o);
+
+	void registerObserver(JUG1Observer o);
+	void removeObserver(JUG1Observer o);
+	void registerObserver(JUG2Observer o);
+	void removeObserver(JUG2Observer o);
+
 }

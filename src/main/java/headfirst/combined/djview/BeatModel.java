@@ -10,12 +10,15 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     int bpm = 90;
     Sequence sequence;
     Track track;
+	String name="Beat";
  
 	public void initialize() {
         setUpMidi();
         buildTrackAndStart();
 	}
- 
+	public String getName(){
+		return name;
+	}
     public void on() {
         sequencer.start();
 //        setBPM(90);
@@ -61,8 +64,15 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 	public void registerObserver(BPMObserver o) {
 		bpmObservers.add(o);
 	}
-  
-	public void notifyBPMObservers() {
+
+	public void registerObserver(JUG1Observer o) {}
+	public void registerObserver(JUG2Observer o) {}
+	public void removeObserver(JUG1Observer o){}
+	public void removeObserver(JUG2Observer o){}
+	public int getJUG1(){return 0; }
+	public int getJUG2(){return 0;}
+
+		public void notifyBPMObservers() {
 		for(int i = 0; i < bpmObservers.size(); i++) {
 			BPMObserver observer = (BPMObserver)bpmObservers.get(i);
 			observer.updateBPM();

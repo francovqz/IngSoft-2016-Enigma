@@ -1,10 +1,10 @@
 package headfirst.combined.djview;
-
+    
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DJView implements ActionListener,  BeatObserver, BPMObserver {
+public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1Observer,JUG2Observer, Runnable {
     BeatModelInterface model;
     ControllerInterface controller;
     JFrame viewFrame;
@@ -28,8 +28,10 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
     public DJView(ControllerInterface controller, BeatModelInterface model) {
         this.controller = controller;
         this.model = model;
-        model.registerObserver((BeatObserver)this);
-        model.registerObserver((BPMObserver)this);
+        model.registerObserver((BeatObserver) this);
+        model.registerObserver((BPMObserver) this);
+        model.registerObserver((JUG1Observer) this);
+        model.registerObserver((JUG2Observer) this);
     }
 
     public void createView() {
@@ -49,6 +51,8 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
         bpmPanel.add(anotadorLabel);
         bpmPanel.add(anotadorOutputLabel);
         viewPanel.add(bpmPanel);
+        //    JPanel anotadorPanel = new JPanel(new GridLayout(3, 1));
+        // viewPanel.add(anotadorPanel);
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
         viewFrame.pack();
         viewFrame.setVisible(true);
@@ -94,7 +98,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
         bpmTextField = new JTextField(2);
         bpmLabel = new JLabel("Enter BPM:", SwingConstants.RIGHT);
         setBPMButton = new JButton("Set");
-        setBPMButton.setSize(new Dimension(10,40));
+        setBPMButton.setSize(new Dimension(10, 40));
         increaseBPMButton = new JButton(">>");
         decreaseBPMButton = new JButton("<<");
         setBPMButton.addActionListener(this);
@@ -115,8 +119,8 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
         insideControlPanel.add(buttonPanel);
         controlPanel.add(insideControlPanel);
 
-        bpmLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
-        bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        bpmLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         controlFrame.getRootPane().setDefaultButton(setBPMButton);
         controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);
@@ -166,19 +170,49 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
             }
         }
     }
-    public void updateAnotador(){
-        if (model != null) {
-            int uno = model.getBPM();
-            int dos = model.getBPM();
-            anotadorOutputLabel.setText(uno + " - " + dos);
 
+    public void updateJUG1() {
+        if (model != null) {
+            int uno = model.getJUG1();
+            int dos = model.getJUG2();
+            anotadorOutputLabel.setText(uno + " - " + dos);
+        }
+    }
+
+
+    public void updateJUG2() {
+        if (model != null) {
+            int uno = model.getJUG1();
+            int dos = model.getJUG2();
+            anotadorOutputLabel.setText(uno + " - " + dos);
         }
     }
 
 
     public void updateBeat() {
-        if (beatBar != null) {
-            beatBar.setValue(100);
+        if (model.getName().equals("Anotador")) {
+            beatBar.setMaximum(100);
+            beatBar.setMinimum(0);
+            beatBar.setControl(1);
+            new Thread(this).start();
+        }
+        else {
+            if (beatBar != null) {
+                beatBar.setValue(100);
+            }
+        }
+    }
+
+    public void run() {
+
+        for (int i = 100; i > 0; i--) {
+
+            beatBar.setValue(i);
+            beatBar.repaint();
+            try {
+                Thread.sleep(10*model.getBPM());
+
+            } catch (Exception e) { }  ;
         }
     }
 }

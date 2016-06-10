@@ -9,10 +9,14 @@ public class HeartModel implements HeartModelInterface, Runnable {
     int bpm = 90;
 	Random random = new Random(System.currentTimeMillis());
 	Thread thread;
+	String name="Heart";
 
 	public HeartModel() {
 		thread = new Thread(this);
 		thread.start();
+	}
+	public String getName(){
+		return name;
 	}
 
 	public void run() {
@@ -76,4 +80,10 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			observer.updateBPM();
 		}
 	}
+	public void registerObserver(JUG1Observer o) {}
+	public void registerObserver(JUG2Observer o) {}
+	public void removeObserver(JUG1Observer o){}
+	public void removeObserver(JUG2Observer o){}
+	public int getJUG1(){return 0; }
+	public int getJUG2(){return 0;}
 }
