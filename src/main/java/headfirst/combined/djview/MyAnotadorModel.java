@@ -11,21 +11,29 @@ public class MyAnotadorModel implements MyAnotadorInterface {
     int bpm = 0;
     int jug1 = 0;
     int jug2 = 0;
-
+    String name="Anotador";
 
     public void on() {
-       setBMP(getBPM());
+       setBPM(getBPM());
         setJUG1(getJUG1());
         setJUG2(getJUG2());
     }
-
+    public String getName(){
+        return name;
+    }
     public void off() {
-        setBMP(0);
+        setBPM(0);
     }
 
-    public void setBMP(int bpm){
+    public void setBPM(int bpm){
+        if (bpm==0){
+            setJUG1(0);
+            setJUG2(0);
+        }
         this.bpm = bpm;
         notifyBPMObservers();
+        notifyBeatObservers();
+
     }
 
     public int getBPM(){
@@ -97,6 +105,12 @@ public class MyAnotadorModel implements MyAnotadorInterface {
         for(int i = 0; i < bpmObservers.size(); i++) {
             BPMObserver observer = (BPMObserver)bpmObservers.get(i);
             observer.updateBPM();
+        }
+    }
+    public void notifyBeatObservers() {
+        for(int i = 0; i < beatObservers.size(); i++) {
+            BeatObserver observer = (BeatObserver)beatObservers.get(i);
+            observer.updateBeat();
         }
     }
 

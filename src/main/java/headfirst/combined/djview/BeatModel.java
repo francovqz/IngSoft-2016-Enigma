@@ -10,12 +10,15 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     int bpm = 90;
     Sequence sequence;
     Track track;
+	String name="Beat";
  
 	public void initialize() {
         setUpMidi();
         buildTrackAndStart();
 	}
- 
+	public String getName(){
+		return name;
+	}
     public void on() {
         sequencer.start();
 //        setBPM(90);

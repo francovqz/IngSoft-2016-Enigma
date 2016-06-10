@@ -6,6 +6,7 @@ public class MyAnotadorAdapter implements BeatModelInterface{
         this.anotador = anotador;
     }
 
+    public String getName(){return "Anotador";}
     public void initialize() {}
 
     public void on() {}
@@ -16,7 +17,7 @@ public class MyAnotadorAdapter implements BeatModelInterface{
         return anotador.getBPM();
     }
 
-    public void setBPM(int bpm) {}
+    public void setBPM(int bpm) {anotador.setBPM(bpm);}
 
     public void registerObserver(BeatObserver o) {
         anotador.registerObserver(o);

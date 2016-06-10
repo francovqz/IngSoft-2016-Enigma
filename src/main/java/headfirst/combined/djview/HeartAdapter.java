@@ -6,7 +6,7 @@ public class HeartAdapter implements BeatModelInterface {
 	public HeartAdapter(HeartModelInterface heart) {
 		this.heart = heart;
 	}
-
+	public String getName(){return "Heart";}
     public void initialize() {}
   
     public void on() {}

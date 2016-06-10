@@ -13,8 +13,10 @@ public interface MyAnotadorInterface {
     void registerObserver(JUG2Observer o);
     void removeObserver(JUG2Observer o);
     int getBPM();
+    void setBPM(int bpm);
     void setJUG1(int jug1);
     int getJUG1();
     void setJUG2(int jug2);
     int getJUG2();
+    String getName();
 }

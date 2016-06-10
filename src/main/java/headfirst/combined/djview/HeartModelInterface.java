@@ -1,6 +1,7 @@
 package headfirst.combined.djview;
 
 public interface HeartModelInterface {
+	String getName();
 	int getHeartRate();
 	void registerObserver(BeatObserver o);
 	void removeObserver(BeatObserver o);

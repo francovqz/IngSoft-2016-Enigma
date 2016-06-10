@@ -12,6 +12,7 @@ public interface BeatModelInterface {
 	int getBPM();
 	int getJUG1();
 	int getJUG2();
+	String getName();
   
 	void registerObserver(BeatObserver o);
   

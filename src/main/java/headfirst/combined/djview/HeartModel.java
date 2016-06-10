@@ -9,10 +9,14 @@ public class HeartModel implements HeartModelInterface, Runnable {
     int bpm = 90;
 	Random random = new Random(System.currentTimeMillis());
 	Thread thread;
+	String name="Heart";
 
 	public HeartModel() {
 		thread = new Thread(this);
 		thread.start();
+	}
+	public String getName(){
+		return name;
 	}
 
 	public void run() {
