@@ -3,16 +3,30 @@ package headfirst.combined.djview;
 import java.util.*;
 
 public class HeartModel implements HeartModelInterface, Runnable {
+	private static HeartModel uniqueInstace;
+
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
 	int time = 1000;
-    int bpm = 90;
+	int bpm = 90;
+	int intentos=-1;
 	Random random = new Random(System.currentTimeMillis());
 	Thread thread;
 
-	public HeartModel() {
+	private HeartModel() {
 		thread = new Thread(this);
 		thread.start();
+	}
+
+	public static HeartModel getInstace(){
+		if(uniqueInstace==null){
+			uniqueInstace=new HeartModel();
+		}
+		uniqueInstace.setIntentos();
+		return uniqueInstace;
+	}
+	public void setIntentos(){
+		intentos++;
 	}
 
 	public void run() {
@@ -37,9 +51,8 @@ public class HeartModel implements HeartModelInterface, Runnable {
 			} catch (Exception e) {}
 		}
 	}
-	public int getHeartRate() {
-		return 60000/time;
-	}
+//	public int getHeartRate() {return 60000/time;}
+	public int getHeartRate() {return intentos;}
 
 	public void registerObserver(BeatObserver o) {
 		beatObservers.add(o);
