@@ -1,5 +1,5 @@
 package headfirst.combined.djview;
-    
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -51,8 +51,6 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         bpmPanel.add(anotadorLabel);
         bpmPanel.add(anotadorOutputLabel);
         viewPanel.add(bpmPanel);
-        //    JPanel anotadorPanel = new JPanel(new GridLayout(3, 1));
-        // viewPanel.add(anotadorPanel);
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
         viewFrame.pack();
         viewFrame.setVisible(true);
