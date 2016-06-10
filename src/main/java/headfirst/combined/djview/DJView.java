@@ -193,6 +193,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         if (model.getName().equals("Anotador")) {
             beatBar.setMaximum(100);
             beatBar.setMinimum(0);
+            beatBar.setControl(1);
             new Thread(this).start();
         }
         else {
