@@ -7,7 +7,7 @@ import javax.swing.*;
 public class BeatBar extends JProgressBar implements Runnable { 
     JProgressBar progressBar;
 	Thread thread;
-	int control=0;
+	String control="";
 
 
 	public BeatBar() {
@@ -15,13 +15,14 @@ public class BeatBar extends JProgressBar implements Runnable {
 		setMaximum(100);
 		thread.start();
 	}
-	void setControl(int c){
+	void setControl(String c){
 		control=c;
 	}
 
 	public void run() {
 		for(;;) {
-			if (control==0){
+			if (control.equals("Anotador")){}
+			else{
 			int value = getValue();
 			value = (int)(value * .75);
 			setValue(value);
