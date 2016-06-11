@@ -15,6 +15,14 @@ public class MyAnotadorController implements ControllerInterface{
         //model.initialize();
     }
 
+    public MyAnotadorController(MyAnotadorInterface model,DJView view){
+        this.model = model;
+        this.view = view;
+        view.disableStopMenuItem();
+        view.enableStartMenuItem();
+        //model.initialize();
+    }
+
     public void start(){
         model.on();
         view.disableStartMenuItem();

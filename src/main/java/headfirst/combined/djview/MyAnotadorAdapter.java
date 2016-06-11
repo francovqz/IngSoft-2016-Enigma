@@ -56,4 +56,6 @@ public class MyAnotadorAdapter implements BeatModelInterface{
     public int getJUG2() {
         return anotador.getJUG2();
     }
+    public void setJUG1(int i){}
+    public void setJUG2(int i){}
 }

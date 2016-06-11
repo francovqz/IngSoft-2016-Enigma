@@ -7,7 +7,7 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     Sequencer sequencer;
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
-    int bpm = 90;
+    int bpm = 0;
     Sequence sequence;
     Track track;
 	String name="Beat";
@@ -71,6 +71,8 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 	public void removeObserver(JUG2Observer o){}
 	public int getJUG1(){return 0; }
 	public int getJUG2(){return 0;}
+	public void setJUG1(int i){}
+	public void setJUG2(int i){}
 
 		public void notifyBPMObservers() {
 		for(int i = 0; i < bpmObservers.size(); i++) {

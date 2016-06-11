@@ -12,10 +12,17 @@ public class HeartController implements ControllerInterface {
 		view.disableStopMenuItem();
 		view.disableStartMenuItem();
 	}
+	public HeartController(HeartModelInterface model, DJView view) {
+		this.model = model;
+		this.view = view;
+		view.disableStopMenuItem();
+		view.disableStartMenuItem();
+	}
   
 	public void start() {}
  
-	public void stop() {}
+	public void stop() {
+	}
     
 	public void increaseBPM() {
 		HeartModel nuevo=HeartModel.getInstace();

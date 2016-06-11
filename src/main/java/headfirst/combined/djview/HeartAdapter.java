@@ -49,4 +49,6 @@ public class HeartAdapter implements BeatModelInterface {
 	public void removeObserver(JUG2Observer o) {	heart.removeObserver(o);}
 	public int getJUG1(){return 0;}
 	public int getJUG2(){return 0;}
+	public void setJUG1(int i){}
+	public void setJUG2(int i){}
 }

@@ -14,7 +14,10 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	Thread thread;
 	String name="Heart";
 
-	private HeartModel() {
+
+
+
+	public HeartModel() {
 		thread = new Thread(this);
 		thread.start();
 	}
@@ -26,11 +29,12 @@ public class HeartModel implements HeartModelInterface, Runnable {
 		if(uniqueInstace==null){
 			uniqueInstace=new HeartModel();
 		}
-		uniqueInstace.setIntentos();
+		uniqueInstace.increaseIntentos();
 		return uniqueInstace;
 	}
-	public void setIntentos(){
+	public void increaseIntentos(){
 		intentos++;
+		notifyBPMObservers();
 	}
 
 	public void run() {

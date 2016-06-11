@@ -24,6 +24,8 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
     JMenu menu;
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
+    String[] option ={"AnotadorModel","HeartModel","BPMModel"};
+    JComboBox<String> box= new JComboBox<String>(option);
 
     public DJView(ControllerInterface controller, BeatModelInterface model) {
         this.controller = controller;
@@ -92,7 +94,6 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         menu.add(exit);
         menuBar.add(menu);
         controlFrame.setJMenuBar(menuBar);
-
         bpmTextField = new JTextField(2);
         bpmLabel = new JLabel("Enter BPM:", SwingConstants.RIGHT);
         setBPMButton = new JButton("Set");
@@ -102,6 +103,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         setBPMButton.addActionListener(this);
         increaseBPMButton.addActionListener(this);
         decreaseBPMButton.addActionListener(this);
+        box.addActionListener(this);
 
         JPanel buttonPanel = new JPanel(new GridLayout(1, 2));
 
@@ -111,10 +113,12 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         JPanel enterPanel = new JPanel(new GridLayout(1, 2));
         enterPanel.add(bpmLabel);
         enterPanel.add(bpmTextField);
-        JPanel insideControlPanel = new JPanel(new GridLayout(3, 1));
+        JPanel insideControlPanel = new JPanel(new GridLayout(4, 1));
+
         insideControlPanel.add(enterPanel);
         insideControlPanel.add(setBPMButton);
         insideControlPanel.add(buttonPanel);
+        insideControlPanel.add(box);
         controlPanel.add(insideControlPanel);
 
         bpmLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -151,8 +155,36 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
             controller.increaseBPM();
         } else if (event.getSource() == decreaseBPMButton) {
             controller.decreaseBPM();
-        }
-    }
+        } else if(event.getSource()==box){
+            String selected= (String)box.getSelectedItem();
+            switch (selected){
+                case "BPMModel":{
+
+                                    controller.stop();desregistrar();
+                                    model= new BeatModel();
+                                    controller=new BeatController(model,this);
+                                    controller.start();
+                                    registrar();
+                                    break;}
+                case "HeartModel":{
+                                    controller.stop();desregistrar();
+                                    HeartModelInterface nuevo= HeartModel.getInstace();
+                                    model=new HeartAdapter(nuevo);
+                                    controller=new HeartController(nuevo,this);
+                                    controller.start();
+                                    registrar();
+                                     break;}
+                case "AnotadorModel":{
+                                        controller.stop();desregistrar();
+                                        MyAnotadorInterface nuevo=new MyAnotadorModel();
+                                        model= new MyAnotadorAdapter(nuevo);
+                                        controller=new MyAnotadorController(nuevo,this);
+                                        controller.start();
+                                        registrar();
+                                        break;}
+                default:{}
+            }
+    }}
 
     public void updateBPM() {
         if (model != null) {
@@ -163,7 +195,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
                 }
             } else {
                 if (bpmOutputLabel != null) {
-                    bpmOutputLabel.setText("Current BPM: " + model.getBPM());
+                    bpmOutputLabel.setText("Intentos: " + model.getBPM());
                 }
             }
         }
@@ -196,7 +228,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         }
         else {
             if (beatBar != null) {
-                beatBar.setValue(100);
+               beatBar.setValue(100);
             }
         }
     }
@@ -212,5 +244,18 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
 
             } catch (Exception e) { }  ;
         }
+    }
+    public void desregistrar(){
+        model.removeObserver((BeatObserver) this);
+        model.removeObserver((BPMObserver) this);
+        model.removeObserver((JUG1Observer) this);
+        model.removeObserver((JUG2Observer) this);
+    }
+
+    public void registrar(){
+        model.registerObserver((BeatObserver) this);
+        model.registerObserver((BPMObserver) this);
+        model.registerObserver((JUG1Observer) this);
+        model.registerObserver((JUG2Observer) this);
     }
 }
