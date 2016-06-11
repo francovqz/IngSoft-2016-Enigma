@@ -9,7 +9,7 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	ArrayList bpmObservers = new ArrayList();
 	int time = 1000;
 	int bpm = 90;
-	int intentos=-1;
+	int intentos= -1;
 	Random random = new Random(System.currentTimeMillis());
 	Thread thread;
 
@@ -27,6 +27,7 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	}
 	public void setIntentos(){
 		intentos++;
+		notifyBPMObservers();
 	}
 
 	public void run() {

@@ -4,15 +4,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1Observer,JUG2Observer, Runnable {
+public class DJView implements ActionListener,  BeatObserver, BPMObserver {
     BeatModelInterface model;
     ControllerInterface controller;
     JFrame viewFrame;
     JPanel viewPanel;
     BeatBar beatBar;
     JLabel bpmOutputLabel;
-    JLabel anotadorOutputLabel;
-    JLabel anotadorLabel;
+
     JFrame controlFrame;
     JPanel controlPanel;
     JLabel bpmLabel;
@@ -30,8 +29,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         this.model = model;
         model.registerObserver((BeatObserver) this);
         model.registerObserver((BPMObserver) this);
-        model.registerObserver((JUG1Observer) this);
-        model.registerObserver((JUG2Observer) this);
+
     }
 
     public void createView() {
@@ -41,16 +39,12 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewFrame.setSize(new Dimension(100, 80));
         bpmOutputLabel = new JLabel("offline", SwingConstants.CENTER);
-        anotadorLabel = new JLabel("Jugador1  -  Jugador2", SwingConstants.CENTER);
-        anotadorOutputLabel = new JLabel("0" + "  -  " + "0", SwingConstants.CENTER);
         beatBar = new BeatBar();
         beatBar.setValue(0);
-        JPanel bpmPanel = new JPanel(new GridLayout(4, 2));
+        JPanel bpmPanel = new JPanel(new GridLayout(2, 2));
         bpmPanel.add(beatBar);
         bpmPanel.add(bpmOutputLabel);
-        bpmPanel.add(anotadorLabel);
-        bpmPanel.add(anotadorOutputLabel);
-        viewPanel.add(bpmPanel);
+       viewPanel.add(bpmPanel);
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
         viewFrame.pack();
         viewFrame.setVisible(true);
@@ -92,7 +86,6 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         menu.add(exit);
         menuBar.add(menu);
         controlFrame.setJMenuBar(menuBar);
-
         bpmTextField = new JTextField(2);
         bpmLabel = new JLabel("Enter BPM:", SwingConstants.RIGHT);
         setBPMButton = new JButton("Set");
@@ -169,48 +162,9 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         }
     }
 
-    public void updateJUG1() {
-        if (model != null) {
-            int uno = model.getJUG1();
-            int dos = model.getJUG2();
-            anotadorOutputLabel.setText(uno + " - " + dos);
-        }
-    }
-
-
-    public void updateJUG2() {
-        if (model != null) {
-            int uno = model.getJUG1();
-            int dos = model.getJUG2();
-            anotadorOutputLabel.setText(uno + " - " + dos);
-        }
-    }
-
-
     public void updateBeat() {
-        if (model.getName().equals("Anotador")) {
-            beatBar.setMaximum(100);
-            beatBar.setMinimum(0);
-            beatBar.setControl(model.getName());
-            new Thread(this).start();
-        }
-        else {
-            if (beatBar != null) {
-                beatBar.setValue(100);
-            }
-        }
-    }
-
-    public void run() {
-
-        for (int i = 100; i > 0; i--) {
-
-            beatBar.setValue(i);
-            beatBar.repaint();
-            try {
-                Thread.sleep(10*model.getBPM());
-
-            } catch (Exception e) { }  ;
+        if (beatBar != null) {
+            beatBar.setValue(100);
         }
     }
 }
