@@ -195,7 +195,12 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
                 }
             } else {
                 if (bpmOutputLabel != null) {
-                    bpmOutputLabel.setText("Intentos: " + model.getBPM());
+                    switch (model.getName()){
+                        case "Anotador":{bpmOutputLabel.setText("Segundos: " + model.getBPM());break;}
+                        case "Heart":{bpmOutputLabel.setText("Intentos: " + model.getBPM());break;}
+                        case "Beat":{bpmOutputLabel.setText("BPM: " + model.getBPM());break;}
+
+                    }
                 }
             }
         }
