@@ -1,14 +1,14 @@
 <center>_________________________________
 
 <br />
-#  #
+# PROYECTO "ANOTADOR" #
 <br />
 # CONFIGURATION MANAGEMENT PLAN #
 <br />
 _________________________________</center>
 <br />
 <br />
-##Autores:
+##Autores: Grupo Enigma
 
 -	Gatica, Carolina
 -	Heredia, Marco
@@ -29,44 +29,42 @@ _________________________________</center>
 #Indice de contenidos
 
 
-1. Introduccion...............................................pág 
+1. Introduccion...............................................pág 1
  
-1.1	Propósito y alcance
+1.1	Propósito y alcance.....................................pág 1
 
-1.2	Propósito de las prácticas de SCM
+1.2	Propósito de las prácticas de SCM..............pág 1
 
-1.3 	Glosario.......................................................pág 
+1.3 	Glosario.......................................................pág 1
 
-2.	Control de versiones..................................pág 
+2.	Control de versiones..................................pág 2
 
-3.	Integracion continua...................................pág 
+3.	Integracion continua...................................pág 3
 
-4.	Gestion de defectos...................................pág 
+4.	Gestion de defectos...................................pág 4
 
-5.	Modo de reporte de defectos.....................pág 
+5.	Modo de reporte de defectos.....................pág 4
 
-6.	Esquema de directorios.............................pág 
+6.	Esquema de directorios..............................pág 5
 
-7.	Normas de etiquetado y nombramiento de archivos.....................................................pág 
+7.	Normas de etiquetado y nombramiento de archivos............pág 5
 
-8.	Plan del esquema de ramas a usar............pág 
+8.	Plan del esquema de ramas a usar............pág 6
 
-9.	Politica de fusion de archivos y etiquetado.pág 
+9.	Politica de fusion de archivos y etiquetado.pág 6
 
-10.	Gestion de lanzamiento de releases...........pág 
+10.	Gestion de lanzamiento de releases...........pág 7
 
-11.	Change Control Board................................pág 
+11.	Change Control Board................................pág 8
 
-11.1	Miembros de la CCB...................................pág 
+11.1	Miembros de la CCB...................................pág 8
 
-11.2	Periodicidad de las reuniones de la CCB....pág 
+11.2	Periodicidad de las reuniones de la CCB....pág 8
 
 
 <br /><br />
 
-<center>
-######Página 1
-</center>
+
 ----------
 
 
@@ -89,7 +87,7 @@ Este documento cubre el plan de Configuation Managment(CM) que se usará para el
 <br /><br />
 
 
-##GLOSARIO
+##1.3 Glosario
 
 -	CCB: Change Control Board
 -	CM: Configuration Managment
@@ -102,10 +100,10 @@ Este documento cubre el plan de Configuation Managment(CM) que se usará para el
 <br /><br />
 
 <center>
-######Página 2
+######Página 1
 </center>
 ----------
-#Control de Versiones
+#2. Control de Versiones
     
 Como su nombre lo indica, le concierne el control de versiones de un componente o de un producto o programa. Se trata con conjuntos de items elementales que están bajo el control de configuracion, con el fin de producir un componente o producto coherente. En consecuencia esta actividad esta basada en una generación controlada de un número de versiones para items del proyecto. 
 
@@ -118,10 +116,10 @@ Se accedera al repositorio de trabajo creando una cuenta de usuario en GitHub y 
 <br />
 <br />
 <center>
-######Página 3
+######Página 2
 </center>
 ----------
-#Integracion Continua	
+#3. Integracion Continua	
    
 La integracion continua constituye una parte importate al Sofware Configuration Management ya que se asegura que cada cambio realizado sea integrado al proyecto principal lo antes posible lo cual proporciona una informacion viable sobre la salud del proyecto. 
 
@@ -147,10 +145,10 @@ Junto con Travis se utilizará la herramienta Gradle para la realización de los
 Se deberá incluir en el repositorio los archivos necesarios para que gradle realice los builds. Debido a que en el proyecto no utilizamos Test Unitarios por lo cual gradle será configurado unicamente para realizar los builds de java.
 <br /><br />
 <center>
-######Página 4
+######Página 3
 </center>
 ----------
-#Gestion de defectos
+#4. Gestion de defectos
 
 Para nuestro proyecto utilizaremos la herramienta Issues proporcionada por GitHub para el reporte de defectos y su seguimiento. Para acceder a la misma es necesario entrar al apartado de Issues de GitHub con las cuentas de en las cuales tienen acceso como colaboradores al proyecto principal.
 
@@ -161,7 +159,7 @@ Es importante revisar el apartado en el cual se publican todos los defectos para
 [https://github.com/francovqz/IngSoft-2016-Enigma/issues](https://github.com/francovqz/IngSoft-2016-Enigma/issues)
 
 
-#Modo de reporte de Defectos
+#5. Modo de reporte de Defectos
 
 
 En caso de observar algún defecto en el proyecto es importante dirigirse inmediatamente a la herramienta Issues y crear un nuevo reporte explicando detalladamente el defecto que se encontró, el lugar en el cual se encuentra el defecto y una posible solución del mismo. Es importante garantizar que realmente el defecto existe antes de realizar un reporte.
@@ -175,11 +173,11 @@ La prioridad de resoluciòn del defecto va a ser determinada por el Issue Coordi
 
 <br /><br />
 <center>
-######Página 5
+######Página 4
 </center>
 ----------
 
-#Esquema de directorios
+#6. Esquema de directorios
 
 El esquema de directorios que se va a usar va a ser el típico de un proyecto java con Maven. Esto seria: un directorio src/main/java en la cual se almacena el código,   src/main/resourses para los recursos que se usan en el código java, src/test/java y src/test/resources para el código y recursos de los tests respectivamente . (véase la imagen).
 <br />
@@ -187,23 +185,23 @@ El esquema de directorios que se va a usar va a ser el típico de un proyecto ja
 ![Directorios](/resources/directorios.jpg "Directorios")
 
 
-#Normas de Etiquetado y Nombramiento de Archivos
-
-...
+#7. Normas de Etiquetado y Nombramiento de Archivos
+Para el nombramiento de clases y metodos se utilizará la notación CamelCase y el nombre que se les ponga deberá ser un nombre identificatorio de la función que se lleva a cabo en esa clase o metodo.
+Para las etiquetas se utilizará un nombre identificatorio con la notación CamelCase seguido por una numeración A.B.C, siendo A la que representa cambios mayores en el programa, B la que identifica cambios menores y siendo C la que identifique unicamente a modificaciones menores de la parte grafica que no modifiquen ninguna de las funcionalidades. 
 
 
 <br />
 <br />
 <center>
-######Página 6
+######Página 5
 </center>
 ----------
-#Plan del esquema de ramas a usar
+#8. Plan del esquema de ramas a usar
 
-...
+Se utilizará una rama para cada uno de los items a desarrollar, como en el proyecto se desarrollan 3 modelos bien diferenciables se va a desarrollar uno para cada uno (Singleton, Strategy y el modelo propio). Cada una de estas ramas llevará el nombre identificatorio sobre el tipo de modelo que proceso que se esta codificando. Una vez finalizada la codificación especifica se hará un merge con el master y se harán los modificaciones especificas para asegurarse que no haya ningún tipo de error con el merge.
 
 
-#Política de fusión de archivos y etiquetado
+#9. Política de fusión de archivos y etiquetado
 
 
 La fusión de archivos se realizará a base de los tipos de cambios que se iran realizando en los CI correspondientes. 
@@ -214,10 +212,10 @@ Los etiquetados, tags o label se realizaran cada vez que el proyecto se encuentr
 <br />
 <br />
 <center>
-######Página 7
+######Página 6
 </center>
 ----------
-#Gestion de lanzamiento de releases (cambios o agregados al proyecto)
+#10. Gestion de lanzamiento de releases (cambios o agregados al proyecto)
 
 Este proceso es el responsable de planear, distribuir, y controlar la construccion, el testeo y los lanzamientos de "releases" asi como tambien del envio de nuevas funcionalidades al proyecto que sean requeridas por los clientes que usaran el producto siempre teniendo en cuenta de proteger y mantener la integridad de los servicios y features existentes. 
 
@@ -252,11 +250,11 @@ El plan para la realizacion de los release debe definir:
 <br />
 <br />
 <center>
-######Página 8
+######Página 7
 </center>
 ----------
 
-#Change Control Board
+#11. Change Control Board
  
 La CCB es el grupo encargado de verificar y autorizar cada cambio que se quiera realizar sobre el plan, el producto,  el código o la documentación del mismo. Ningún cambio que tenga consecuencias o que produzca conflictos con el cliente o con algún miembro del personal que esté trabajando en el proyecto puede ser realizado sin la autorización de la CCB.
 
@@ -264,7 +262,7 @@ Las decisiones deben ser tomadas teniendo en cuenta las posibles consecuencias p
 
 La CCB evaluará cada pedido de cambio que se realice a cualquier miembro de la CCB, este pedido tendrá que ser realizado por escrito detallando los cambios que se quieren implementar.
 
-###Miembros de la CCB
+###11.1 Miembros de la CCB
 
 **Engineering Manager – CCB Chair:** Su presencia es indispensable para realizar un control de cambios. Es el que dirige la CCB y es el que se encarga de coordinar las distintas áreas involucradas en el proyecto por lo tanto conoce las incidencias que un cambio puede causar en todas las áreas. En caso de no poder asistir tiene que autorizar a otro miembro de la CCB a ocupar su lugar.
 
@@ -276,10 +274,10 @@ La CCB evaluará cada pedido de cambio que se realice a cualquier miembro de la 
 
 **Configuration Manager:** Su presencia es opcional en el caso que se lo requiera. En el caso que los cambios a realizar involucren alguna parte del CM Plan es necesario su participación ya que es la persona que lo diseño.
 
-###Periodicidad de la reuniones de la CCB
+###11.2 Periodicidad de la reuniones de la CCB
 
 Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrollo del proyecto, con la posibilidad de llamar a reuniones especiales en caso de ser necesario avisando por email o por teléfono con 24hs de antelación.
 <br />
 <center>
-######Página 9
+######Página 8
 </center>
