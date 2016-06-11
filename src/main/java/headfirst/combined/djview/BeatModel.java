@@ -7,7 +7,7 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     Sequencer sequencer;
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
-    int bpm = 0;
+    int bpm = 90;
     Sequence sequence;
     Track track;
 	String name="Beat";

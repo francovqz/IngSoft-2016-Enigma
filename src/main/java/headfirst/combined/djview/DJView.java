@@ -159,7 +159,6 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
             String selected= (String)box.getSelectedItem();
             switch (selected){
                 case "BPMModel":{
-
                                     controller.stop();desregistrar();
                                     model= new BeatModel();
                                     controller=new BeatController(model,this);
@@ -174,14 +173,13 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
                                     controller.start();
                                     registrar();
                                      break;}
-                case "AnotadorModel":{
-                                        controller.stop();desregistrar();
+                case "AnotadorModel":{  controller.stop();desregistrar();
                                         MyAnotadorInterface nuevo=new MyAnotadorModel();
                                         model= new MyAnotadorAdapter(nuevo);
                                         controller=new MyAnotadorController(nuevo,this);
                                         controller.start();
                                         registrar();
-                                        break;}
+                                         break;}
                 default:{}
             }
     }}
@@ -241,14 +239,14 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
     public void run() {
 
         for (int i = 100; i > 0; i--) {
-
+            if(model.getName().equals("Anotador")){
             beatBar.setValue(i);
             beatBar.repaint();
             try {
                 Thread.sleep(10*model.getBPM());
 
             } catch (Exception e) { }  ;
-        }
+        }}
     }
     public void desregistrar(){
         model.removeObserver((BeatObserver) this);
