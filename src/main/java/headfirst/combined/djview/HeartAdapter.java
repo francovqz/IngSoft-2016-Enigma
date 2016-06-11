@@ -9,7 +9,7 @@ public class HeartAdapter implements BeatModelInterface {
 	public String getName(){return "Heart";}
     public void initialize() {}
   
-    public void on() {}
+    public void on() {heart.on();}
   
     public void off() {}
    

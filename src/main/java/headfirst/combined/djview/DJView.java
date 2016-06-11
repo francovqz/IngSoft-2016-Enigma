@@ -24,7 +24,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
     JMenu menu;
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
-    String[] option ={"AnotadorModel","HeartModel","BPMModel"};
+    String[] option ={"AnotadorModel","BPMModel","HeartModel"};
     JComboBox<String> box= new JComboBox<String>(option);
 
     public DJView(ControllerInterface controller, BeatModelInterface model) {
@@ -169,6 +169,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
                                     controller.stop();desregistrar();
                                     HeartModelInterface nuevo= HeartModel.getInstace();
                                     model=new HeartAdapter(nuevo);
+                                    model.on();
                                     controller=new HeartController(nuevo,this);
                                     controller.start();
                                     registrar();
@@ -231,6 +232,7 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         }
         else {
             if (beatBar != null) {
+                beatBar.setControl(model.getName());
                beatBar.setValue(100);
             }
         }
@@ -260,5 +262,9 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver, JUG1O
         model.registerObserver((BPMObserver) this);
         model.registerObserver((JUG1Observer) this);
         model.registerObserver((JUG2Observer) this);
+        updateBeat();
+        updateBPM();
+        updateJUG1();
+        updateJUG2();
     }
 }

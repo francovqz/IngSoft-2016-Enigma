@@ -11,4 +11,5 @@ public interface HeartModelInterface {
 	void removeObserver(JUG1Observer o);
 	void registerObserver(JUG2Observer o);
 	void removeObserver(JUG2Observer o);
+	void on();
 }

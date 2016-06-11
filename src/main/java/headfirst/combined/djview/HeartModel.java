@@ -36,7 +36,11 @@ public class HeartModel implements HeartModelInterface, Runnable {
 		intentos++;
 		notifyBPMObservers();
 	}
-
+	public void on(){
+		thread = new Thread(this);
+		thread.start();
+		random = new Random(System.currentTimeMillis());
+	}
 	public void run() {
 		int lastrate = -1;
 
