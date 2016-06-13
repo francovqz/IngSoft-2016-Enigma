@@ -326,3 +326,47 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 <center>
 ######Página 8
 </center>
+
+<center>_________________________________
+
+<br />
+# DISEÑO E IMPLEMENTACION #
+<br />
+_________________________________</center>
+<br />
+<br />
+
+
+###Diagramas de clases
+
+**Diagramas de clases:**
+
+Se incluye el siguiente diagrama general de clases, que describe la relación del DJView y nuestra proyecto "Anotaador".
+
+![DiagramaDeClases](/resources/diagrama de clases.jpg "DiagramaDeClases")
+
+Se utilizó el patrón observer en el desarrollo de nuestro proyecto, ya que nuestro anotador debe notificar a distintos observadores cuando cambie el estado del marcador de los jugadores.
+
+![Observer](/resources/Observer.jpg "Observer")
+
+En este caso, el observador concreto es el DJView; los observadores son el BPMObserver, el BeatObserver, el JUG1Observer y el JUG2Observer; el sujeto es MyAnotadorInterface y el sujeto concreto MyAnotadorModel.
+
+Se usó también el patrón Strategy, ya que se puede intercambiar entre las distintas aplicaciones de uso, dentro de las cuales se incluye la nuestra.
+
+![Strategy](/resources/strategy.jpg "Strategy")
+
+**Diagrama de paquete:**
+
+Como muestra la siguiente figura, dividimos las clases en cinco categorías: 
+
+1. View
+2. Model
+3. Controller
+4. Adapter
+5. Observers
+
+![DiagramaDePaquetes](/resources/strategydiagrama de paquetes.jpg "DiagramaDePaquetes")
+
+<br />
+<center>
+######Página 9
