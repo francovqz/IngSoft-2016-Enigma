@@ -370,4 +370,32 @@ Como muestra la siguiente figura, dividimos las clases en cinco categorías:
 
 <br />
 <center>
-######Página 9
+
+## Arquitectura
+  
+**Se ha utilizado el patron de arquitectura MVC ya que brinda al proyecto distintas ventajas que justifican su aplicacion:**
+Principalmente, MVC es un patron de arquitectura que proporciona mantenibilidad de aplicacion a traves de la separacion de la interfaz de usuario y la logica del sistema, lo cual permite tener un codigo mas facil de leer y modificar (la modificacion de una capa no afectara a las otras), y asi acomodarse mejor para cambios futuros necesarios manteniendo la operatividad del sistema. 
+
+Con esta independencia de "capas" (MVC) se proporciona la habilidad de cambiar de la implementacion de un modelo a otro sin problemas. En terminos de interaccion, la interfaz de usuario puede mostrar multiples vistas de la misma informacion y al mismo tiempo.
+
+Otra ventaja del patron es que al separar el sistema en tres piezas de funcionalidad (MVC) se facilita el uso de Unit Testing pudiendo testear libremente el modelo del controlador y la vista, y viceversa.
+
+Se debe tener en cuenta que el modelo puede tener un costo de dificultad en su desarrollo pero en cambio se tienen las ventajas que se enunciaron anteriormente, por lo tanto es posible que MVC no sea adecuado para aplicaciones pequeñas ya que habra consecuencias contraproducentes de rendimiento y diseño.
+
+A continuacion se enseña el diagrama de arquitectura general del modelo desarrollado que muestra a grandes rasgos la interaccion entre los elementos mas importantes 
+
+####Diagrama general de arquitectura del sistema
+
+![DiagramaDeArquitecturaGeneral](/resources/Diagrama de arquitectura.jpg "DiagramaDeArquitecturaGeneral")
+
+
+**Se ha tenido en cuenta solo el proyecto creado por el grupo en cuestion para no acomplajar los siguientes diagramas con los detalles de los modelos prerealizados de HeartModel y BeatModel.**
+A partir del patron de arquitectura utilizado se detallan los diagramas de componentes y de despliegue del trabajo.
+
+####Diagrama de Componentes
+
+![Diagrama de componentes](/resources/Diagrama de componentes.jpg "Diagrama de componentes")
+
+####Diagrama de Despliegue
+
+![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
