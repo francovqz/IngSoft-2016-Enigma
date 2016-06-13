@@ -1,11 +1,56 @@
-<center>_________________________________
+<CENTER> 
+# RELEASE NOTES #
+</center>
+
+Se entrega el ejecutable *"IngSoft-2016-Enigma.jar"* equivalente al realease v1.0.0 de nuestro proyecto. 
+
+El cual tambien puede ser descargado del siguiente link:
+[https://github.com/francovqz/IngSoft-2016-Enigma/blob/master/ejecutable/IngSoft-2016-Enigma.jar](https://github.com/francovqz/IngSoft-2016-Enigma/blob/master/ejecutable/IngSoft-2016-Enigma.jar)
+
+El programa cuenta con 3 modelos entre los cuales se puede elegir al utilizar la drop down box.
+
+![Dropdownbox](/resources/dropdownbox.jpg "Dropdownbox")
+
+El modelo Anotador tiene la función de ser un anotador para algún juego y ademas cuenta con un temporizador para determinar si es necesario el tiempo de cada turno. se lo utiliza de la siguiente manera:
+
+-	Con el boton << se le suma un punto al jugador 1.
+
+-	Con el boton >> se le suma un punto al jugador 2.
+
+-	Con el boton Set se inicializa un temporizador con la cantidad de segundos ingresada.
+
+-	Al ingresar el valor 0 al Set se reinicia el contador.
+
+![Anotador](/resources/anotador.jpg "Anotador")
+
+El modelo BPM realiza un sonido con una frecuencia por minuto igual a la que se le coloca al presionar el botón Set, esta frecuencia se inicializa en 90 al iniciar el modelo y se puede modificar con los botones de la siguiente forma:
+
+-	Con el boton << se disminuye en 1 la frecuencia
+
+-	Con el boton >> se aumenta en 1 la frecuencia
+
+![BPM](/resources/bpm.jpg "BPM")
+
+El modelo Heart simula los latidos del corazón, al presionar el boton >> se intenta crear otro modelo igual y debido a que se tiene implementado el patrón Singleton no se puede, en pantalla muestra un mensaje con la cantidad de intentos de creación de un nuevo modelo.
+
+![Heart](/resources/heart.jpg "Heart")
+
+> [ACLARACIÓN: Para la entrega parcial no se realizó la etapa de test por lo cual a este documento le falta la sección de los Pass/Fail Ratio y los Bugs conocidos]
+> 
+> 
+> 
+> <center>_________________________________</center>
 
 <br />
+<center>
 # PROYECTO "ANOTADOR" #
+</center>
 <br />
+<center>
 # CONFIGURATION MANAGEMENT PLAN #
+</center>
 <br />
-_________________________________</center>
+<center>_________________________________</center>
 <br />
 <br />
 ##Autores: Grupo Enigma
