@@ -367,7 +367,7 @@ Como muestra la siguiente figura, dividimos las clases en cinco categorías:
 4. Adapter
 5. Observers
 
-![DiagramaDePaquetes](/resources/sdiagrama de paquetes.jpg "DiagramaDePaquetes")
+![DiagramaDePaquetes](/resources/diagrama de paquetes.jpg "DiagramaDePaquetes")
 
 <br />
 <center>
