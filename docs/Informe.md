@@ -106,7 +106,6 @@ El modelo Heart simula los latidos del corazón, al presionar el boton >> se int
 
 11.2	Periodicidad de las reuniones de la CCB....pág 8
 
-12.     Diseño e Implementación ...................pág 9
 
 
 <br /><br />
