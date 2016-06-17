@@ -1,11 +1,17 @@
 package headfirst.combined.djview;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MyAnotadorControllerTest {
-    /*@Test
+    @Before
+    public void method(){
+        System.setProperty("java.awt.headless", "false");
+    }
+
+    @Test
     public void increaseBPM() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);//
@@ -45,12 +51,11 @@ public class MyAnotadorControllerTest {
         MyAnotadorController controlador= new MyAnotadorController(clase);//
         controlador.setBPM(30);
         assertEquals(30,clase.getBPM());
-    }*/
+    }
     @Test
     public void metodosInterface() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
-        //MyAnotadorController controlador= new MyAnotadorController(clase,controladora.view);
         controlador.view.updateBPM();
         controlador.view.updateBeat();
         controlador.view.updateJUG1();
@@ -62,11 +67,11 @@ public class MyAnotadorControllerTest {
         assertEquals(clase,controlador.model);
     }
 
-    /*@Test
+    @Test
     public void constructor() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
         MyAnotadorController controlador2= new MyAnotadorController(clase,controlador.view);
-        assertEquals(controlador,controlador2);
-    }*/
+        assertEquals(controlador.view,controlador2.view);
+    }
 }
