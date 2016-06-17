@@ -5,10 +5,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MyAnotadorControllerTest {
-    @Test
+    /*@Test
     public void increaseBPM() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
-        MyAnotadorController controlador= new MyAnotadorController(clase);
+        MyAnotadorController controlador= new MyAnotadorController(clase);//
         clase.setJUG2(4);
         controlador.increaseBPM();
         assertEquals(5,clase.getJUG2());
@@ -16,7 +16,7 @@ public class MyAnotadorControllerTest {
     @Test
     public void increaseBPM2() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
-        MyAnotadorController controlador= new MyAnotadorController(clase);
+        MyAnotadorController controlador= new MyAnotadorController(clase);//
         clase.setJUG2(-3);
         controlador.increaseBPM();
         assertEquals(-2,clase.getJUG2());
@@ -25,7 +25,7 @@ public class MyAnotadorControllerTest {
     @Test
     public void decreaseBPM() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
-        MyAnotadorController controlador= new MyAnotadorController(clase);
+        MyAnotadorController controlador= new MyAnotadorController(clase);//
         clase.setJUG1(3);
         controlador.decreaseBPM();
         assertEquals(4,clase.getJUG1());
@@ -33,7 +33,7 @@ public class MyAnotadorControllerTest {
     @Test
     public void decreaseBPM2() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
-        MyAnotadorController controlador= new MyAnotadorController(clase);
+        MyAnotadorController controlador= new MyAnotadorController(clase);//
         clase.setJUG1(-1);
         controlador.decreaseBPM();
         assertEquals(0,clase.getJUG1());
@@ -42,14 +42,15 @@ public class MyAnotadorControllerTest {
     @Test
     public void setBPM() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
-        MyAnotadorController controlador= new MyAnotadorController(clase);
+        MyAnotadorController controlador= new MyAnotadorController(clase);//
         controlador.setBPM(30);
         assertEquals(30,clase.getBPM());
-    }
+    }*/
     @Test
     public void metodosInterface() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
+        //MyAnotadorController controlador= new MyAnotadorController(clase,controladora.view);
         controlador.view.updateBPM();
         controlador.view.updateBeat();
         controlador.view.updateJUG1();
@@ -60,10 +61,12 @@ public class MyAnotadorControllerTest {
         controlador.stop();
         assertEquals(clase,controlador.model);
     }
+
+    /*@Test
     public void constructor() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
         MyAnotadorController controlador2= new MyAnotadorController(clase,controlador.view);
         assertEquals(controlador,controlador2);
-    }
+    }*/
 }
