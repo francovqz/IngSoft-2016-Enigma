@@ -1,5 +1,18 @@
 apply plugin: 'java'
 
 dependencies {
-  testCompile 'junit:junit:4.12'
+  testCompile 'junit:junit:4.10'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src/main/java'
+    }
+  }
+  test {
+    java {
+      srcDir 'src/test/java'
+    }
+  }
 }
