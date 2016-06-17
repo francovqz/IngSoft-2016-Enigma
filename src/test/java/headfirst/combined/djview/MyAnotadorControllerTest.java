@@ -5,13 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MyAnotadorControllerTest {
-    /*@Test
+    @Test
     public void increaseBPM() throws Exception {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
         clase.setJUG2(4);
         controlador.increaseBPM();
-        assertTrue(clase.getJUG2()==5);
+        assertEquals(5,clase.getJUG2());
     }
     @Test
     public void increaseBPM2() throws Exception {
@@ -19,7 +19,7 @@ public class MyAnotadorControllerTest {
         MyAnotadorController controlador= new MyAnotadorController(clase);
         clase.setJUG2(-3);
         controlador.increaseBPM();
-        assertTrue(clase.getJUG2()==-2);
+        assertEquals(-2,clase.getJUG2());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class MyAnotadorControllerTest {
         MyAnotadorController controlador= new MyAnotadorController(clase);
         clase.setJUG1(3);
         controlador.decreaseBPM();
-        assertTrue(clase.getJUG1()==4);
+        assertEquals(4,clase.getJUG1());
     }
     @Test
     public void decreaseBPM2() throws Exception {
@@ -36,7 +36,7 @@ public class MyAnotadorControllerTest {
         MyAnotadorController controlador= new MyAnotadorController(clase);
         clase.setJUG1(-1);
         controlador.decreaseBPM();
-        assertTrue(clase.getJUG1()==0);
+        assertEquals(0,clase.getJUG1());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class MyAnotadorControllerTest {
         MyAnotadorModel clase= new MyAnotadorModel();
         MyAnotadorController controlador= new MyAnotadorController(clase);
         controlador.setBPM(30);
-        assertTrue(clase.getBPM()==30);
+        assertEquals(30,clase.getBPM());
     }
     @Test
     public void metodosInterface() throws Exception {
@@ -65,5 +65,5 @@ public class MyAnotadorControllerTest {
         MyAnotadorController controlador= new MyAnotadorController(clase);
         MyAnotadorController controlador2= new MyAnotadorController(clase,controlador.view);
         assertEquals(controlador,controlador2);
-    }*/
+    }
 }
