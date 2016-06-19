@@ -371,6 +371,12 @@ Como muestra la siguiente figura, dividimos las clases en cinco categorías:
 <br />
 <center>
 
+###Diagrama de Secuencia
+
+En el siguiente diagrama se muestran las principales interacciones entre las distitas clases que sigue nuestra aplicación. 
+
+![DiagramaDeSecuencia](/resources/diagrama de secuencia.jpg "DiagramaDeSecuencia")
+
 ## Arquitectura
   
 **Se ha utilizado el patron de arquitectura MVC ya que brinda al proyecto distintas ventajas que justifican su aplicacion:**
