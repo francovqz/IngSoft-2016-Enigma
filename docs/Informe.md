@@ -328,6 +328,45 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 ######Página 8
 </center>
 
+# Requerimientos
+**Se presentaran a continuacion una enumeracion de los requerimientos funcionales y no funcionales que cumplen y satisfacen nuestro proyecto en su composición, luego de haber descrito el plan de desarrollo**
+ 
+###Requerimientos funcionales 
+-Al inicio de la ejecucion, se debe permitir seleccionar que modelo utilizar a partir de un dropdownbox
+
+-Para que comience a funcionar bien el modelo requerido, primero es necesario seleccionarlo en el dropdownbox
+
+-No se permite crear mas de un modelo a la vez
+
+-La temporizacion permitida por el modelo creado no permite exceder la hora entre turnos
+
+-El modelo no provee la emision de una señal al terminar la temporizacion
+
+-No se permite el pausado del temporizador 
+
+-Cada vez que se requiera recomenzar el temporizador se debe presionar el  boton  ‘set’ cargado con el tiempo (en segundos) que corresponda
+
+-Para resetear el puntaje es necesario reiniciar la ejecucion “seteando” un ‘0’ en el boton de set, ya que no es posible descontar la puntuacion.
+
+###Requerimientos no funcionales
+-El programa estara activo en promedio, el 95% del tiempo de ejecucion
+
+-El programa solo se ejecutara en plataforma Java
+
+-La probabilidad de falla del sistema no debe ser superior a 0,05
+
+-El programa no proporciona mensajes de error informativos
+
+-La aplicacion se realizara aplicando patrones de diseño de programacion
+
+-La aplicación es compatible con todas las versiones de Windows, desde Windows XP.
+
+-La aplicación consume hasta 300 MB de memoria RAM
+
+-El tiempo de respuesta para las interacciones de usuario con los botones del programa no supera los 10 milisegundos
+
+-Las pruebas de software se gestionaran usando el testing correspondiente (deberia ser mas especifico aca)
+
 <center>_________________________________
 
 <br />
