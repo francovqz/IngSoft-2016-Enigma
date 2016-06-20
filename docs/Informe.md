@@ -457,7 +457,7 @@ A partir del patron de arquitectura utilizado se detallan los diagramas de compo
 ![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
 
 
-# DISEÑO E IMPLEMENTACION #
+# Diseño e implementacion #
 <br />
 _________________________________</center>
 <br />
@@ -502,7 +502,7 @@ En el siguiente diagrama se muestran las principales interacciones entre las dis
 
 ![DiagramaDeSecuencia](/resources/diagrama de secuencia.jpg "DiagramaDeSecuencia")
 
-#PRUEBAS UNITARIAS Y DE SISTEMA#
+#Pruebas unitarias y de sistema#
 
 ###Test Unitarios###
 Se realizó Unit Test sobre todo el codigo creado por nosotros. Para ello se utilizo JUnit 4 y Coverage para medir la covertura de los tests integrados a IntelliJ.
