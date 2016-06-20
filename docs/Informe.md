@@ -511,6 +511,21 @@ Al ingresar un numero demasiado grande el programa no realiza el conteo del temp
 El **Pass/Fail rate de las Pruebas de Sistema fue del 95%** solo se obtuvieron excepciones al realizar pruebas con valores criticos, pero en general los resultados fueron los esperados. 
 
 ----------
+###Smoke Test###
+
+Como Smoke Test o prueba de humo, la cual es un testing rápido que se realiza sobre aspectos funcionales no tanto para encontrar bugs sino para asegurarse que la funcionalidad básica del software o de una parte del software se encuentre estable y responda al comportamiento esperado se realizó pruebas similares a las que se realizo al probar los requerimientos funcionales. Entre los cuales se destacan los siguientes:
+
+- Se le sumo 3 puntos al Jugador 1 al hacer click 3 veces sobre el boton <<
+- Se le sumo 2 puntos al Jugador 2 al hacer click 2 veces sobre el boton >>
+- Se inicio el temporizador en 10 segundos al colocar un 10 y seleccionar Set
+
+El resultado obtenido fue el siguiente:
+
+![smoke](/resources/smoke.jpg "Smoke Test")
+
+Del cual se puede ver que el programa realizo de forma correcta lo que se solicito.
+
+----------
 
 
 Para la organización de los bugs o problemas encontrados se utilizó la herramienta Issues incluida en github. El link del mismo es el siguiente:
