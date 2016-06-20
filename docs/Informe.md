@@ -427,7 +427,7 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 ![MatrizDeTrazabilidad](/resources/Matriz trazabilidad.jpg "MatrizDeTrazabilidad")
 
 
-## Arquitectura
+# Arquitectura
   
 **Se ha utilizado el patron de arquitectura MVC ya que brinda al proyecto distintas ventajas que justifican su aplicacion:**
 Principalmente, MVC es un patron de arquitectura que proporciona mantenibilidad de aplicacion a traves de la separacion de la interfaz de usuario y la logica del sistema, lo cual permite tener un codigo mas facil de leer y modificar (la modificacion de una capa no afectara a las otras), y asi acomodarse mejor para cambios futuros necesarios manteniendo la operatividad del sistema. 
@@ -456,15 +456,12 @@ A partir del patron de arquitectura utilizado se detallan los diagramas de compo
 
 ![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
 
-<center>_________________________________
 
-<br />
 # DISEÑO E IMPLEMENTACION #
 <br />
 _________________________________</center>
 <br />
 <br />
-
 
 ###Diagramas de clases
 
