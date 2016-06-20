@@ -329,6 +329,22 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 </center>
 
 # Requerimientos
+
+**Se muestran a continuación los diagramas correspondientes a los requerimientos**
+
+###Diagrama de Casos de Usos:
+
+![CasosDeUsos](/resources/Caso de usos nuevo.jpg "CasosDeUsos")
+
+###Diagrama de Actividades:
+
+![DiagramaDeActividades](/resources/ActivityDiagram1.jpg "DiagramaDeActividades")
+
+###Diagrama de Secuencias:
+
+![DiagramaDeSecuencias](/resources/Diagrama de secuencia-requerimientos.jpg "DiagramaDeSecuencias")
+
+
 **Se presentaran a continuacion una enumeracion de los requerimientos funcionales y no funcionales que cumplen y satisfacen nuestro proyecto en su composición, luego de haber descrito el plan de desarrollo**
  
 ###Requerimientos funcionales 
@@ -366,6 +382,12 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 -El tiempo de respuesta para las interacciones de usuario con los botones del programa no supera los 10 milisegundos
 
 -Las pruebas de software se gestionaran usando el testing correspondiente (deberia ser mas especifico aca)
+
+###Matriz de Trazabilidad
+
+**A partir de los requerimientos y los casos de usos, se establece la siguiente matriz:**
+
+![MatrizDeTrazabilidad](/resources/Matriz trazabilidad.jpg "MatrizDeTrazabilidad")
 
 <center>_________________________________
 
