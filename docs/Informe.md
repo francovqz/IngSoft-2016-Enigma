@@ -549,6 +549,14 @@ Del cual se puede ver que el programa realizo de forma correcta lo que se solici
 
 ----------
 
+###Matriz de trazabilidad###
+
+La matriz en la cual se relacionan los casos de usos,  los requerimientos, las clases y las pruebas de sistema es la siguiente:
+
+![matriz](/resources/matriz.jpg "Matriz")
+
+----------
+
 
 Para la organización de los bugs o problemas encontrados se utilizó la herramienta Issues incluida en github. El link del mismo es el siguiente:
 
