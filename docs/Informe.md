@@ -35,7 +35,12 @@ El modelo Heart simula los latidos del corazón, al presionar el boton >> se int
 
 ![Heart](/resources/heart.jpg "Heart")
 
-> [ACLARACIÓN: Para la entrega parcial no se realizó la etapa de test por lo cual a este documento le falta la sección de los Pass/Fail Ratio y los Bugs conocidos]
+**Pass/Fail Ratio y Bugs conocidos**
+
+El 95% de los test pasaron exitosamente, los test que fallaron están indicados en la sección de Testing, pero son errores menores que no impiden el funcionamiento correcto del modelo desarrollado.
+
+Con estos Test pudimos encontrar que existen Bugs cuando se quiere ingresar un valor que no es entero en el tiempo para el temporizador. Este error solo tilda el programa por un tiempo muy pequeño debido a las excepciones que lanza el mismo. Este bug, no esta corregido en el momento de la entrega. Esto esta indicado en la herramienta Issues.
+
 > 
 > 
 > 
@@ -215,7 +220,7 @@ El Issue Coordinator determinará quién se hará cargo de resolver el defecto y
 
 La prioridad de resoluciòn del defecto va a ser determinada por el Issue Coordinator, teniendo en cuenta los problemas que puedan causar el postergar la resoluciòn del defecto.
 
-
+![Issues](/resources/issues.jpg "Issues")
 
 <br /><br />
 <center>
@@ -246,6 +251,7 @@ Para las etiquetas se utilizará un nombre identificatorio con la notación Came
 
 Se utilizará una rama para cada uno de los items a desarrollar, como en el proyecto se desarrollan 3 modelos bien diferenciables se va a desarrollar uno para cada uno (Singleton, Strategy y el modelo propio). Cada una de estas ramas llevará el nombre identificatorio sobre el tipo de modelo que proceso que se esta codificando. Una vez finalizada la codificación especifica se hará un merge con el master y se harán los modificaciones especificas para asegurarse que no haya ningún tipo de error con el merge.
 
+![Ramas](/resources/branching.jpg "Ramas")
 
 #9. Política de fusión de archivos y etiquetado
 
@@ -389,6 +395,36 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 
 ![MatrizDeTrazabilidad](/resources/Matriz trazabilidad.jpg "MatrizDeTrazabilidad")
 
+
+## Arquitectura
+  
+**Se ha utilizado el patron de arquitectura MVC ya que brinda al proyecto distintas ventajas que justifican su aplicacion:**
+Principalmente, MVC es un patron de arquitectura que proporciona mantenibilidad de aplicacion a traves de la separacion de la interfaz de usuario y la logica del sistema, lo cual permite tener un codigo mas facil de leer y modificar (la modificacion de una capa no afectara a las otras), y asi acomodarse mejor para cambios futuros necesarios manteniendo la operatividad del sistema. 
+
+Con esta independencia de "capas" (MVC) se proporciona la habilidad de cambiar de la implementacion de un modelo a otro sin problemas. En terminos de interaccion, la interfaz de usuario puede mostrar multiples vistas de la misma informacion y al mismo tiempo.
+
+Otra ventaja del patron es que al separar el sistema en tres piezas de funcionalidad (MVC) se facilita el uso de Unit Testing pudiendo testear libremente el modelo del controlador y la vista, y viceversa.
+
+Se debe tener en cuenta que el modelo puede tener un costo de dificultad en su desarrollo pero en cambio se tienen las ventajas que se enunciaron anteriormente, por lo tanto es posible que MVC no sea adecuado para aplicaciones pequeñas ya que habra consecuencias contraproducentes de rendimiento y diseño.
+
+A continuacion se enseña el diagrama de arquitectura general del modelo desarrollado que muestra a grandes rasgos la interaccion entre los elementos mas importantes 
+
+####Diagrama general de arquitectura del sistema
+
+![DiagramaDeArquitecturaGeneral](/resources/Diagrama de arquitectura.jpg "DiagramaDeArquitecturaGeneral")
+
+
+**Se ha tenido en cuenta solo el proyecto creado por el grupo en cuestion para no acomplajar los siguientes diagramas con los detalles de los modelos prerealizados de HeartModel y BeatModel.**
+A partir del patron de arquitectura utilizado se detallan los diagramas de componentes y de despliegue del trabajo.
+
+####Diagrama de Componentes
+
+![Diagrama de componentes](/resources/Diagrama de componentes.jpg "Diagrama de componentes")
+
+####Diagrama de Despliegue
+
+![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
+
 <center>_________________________________
 
 <br />
@@ -437,36 +473,6 @@ Como muestra la siguiente figura, dividimos las clases en cinco categorías:
 En el siguiente diagrama se muestran las principales interacciones entre las distitas clases que sigue nuestra aplicación. 
 
 ![DiagramaDeSecuencia](/resources/diagrama de secuencia.jpg "DiagramaDeSecuencia")
-
-## Arquitectura
-  
-**Se ha utilizado el patron de arquitectura MVC ya que brinda al proyecto distintas ventajas que justifican su aplicacion:**
-Principalmente, MVC es un patron de arquitectura que proporciona mantenibilidad de aplicacion a traves de la separacion de la interfaz de usuario y la logica del sistema, lo cual permite tener un codigo mas facil de leer y modificar (la modificacion de una capa no afectara a las otras), y asi acomodarse mejor para cambios futuros necesarios manteniendo la operatividad del sistema. 
-
-Con esta independencia de "capas" (MVC) se proporciona la habilidad de cambiar de la implementacion de un modelo a otro sin problemas. En terminos de interaccion, la interfaz de usuario puede mostrar multiples vistas de la misma informacion y al mismo tiempo.
-
-Otra ventaja del patron es que al separar el sistema en tres piezas de funcionalidad (MVC) se facilita el uso de Unit Testing pudiendo testear libremente el modelo del controlador y la vista, y viceversa.
-
-Se debe tener en cuenta que el modelo puede tener un costo de dificultad en su desarrollo pero en cambio se tienen las ventajas que se enunciaron anteriormente, por lo tanto es posible que MVC no sea adecuado para aplicaciones pequeñas ya que habra consecuencias contraproducentes de rendimiento y diseño.
-
-A continuacion se enseña el diagrama de arquitectura general del modelo desarrollado que muestra a grandes rasgos la interaccion entre los elementos mas importantes 
-
-####Diagrama general de arquitectura del sistema
-
-![DiagramaDeArquitecturaGeneral](/resources/Diagrama de arquitectura.jpg "DiagramaDeArquitecturaGeneral")
-
-
-**Se ha tenido en cuenta solo el proyecto creado por el grupo en cuestion para no acomplajar los siguientes diagramas con los detalles de los modelos prerealizados de HeartModel y BeatModel.**
-A partir del patron de arquitectura utilizado se detallan los diagramas de componentes y de despliegue del trabajo.
-
-####Diagrama de Componentes
-
-![Diagrama de componentes](/resources/Diagrama de componentes.jpg "Diagrama de componentes")
-
-####Diagrama de Despliegue
-
-![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
-
 
 #PRUEBAS UNITARIAS Y DE SISTEMA#
 
