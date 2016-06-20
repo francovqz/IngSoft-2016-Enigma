@@ -362,7 +362,7 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 
 # Requerimientos
 
-**Se muestran a continuación los diagramas correspondientes a los requerimientos**
+**Para introducirnos en este aspecto, se muestran los diagramas correspondientes a los requerimientos**
 
 ###Diagrama de Casos de Usos:
 
@@ -377,7 +377,7 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 ![DiagramaDeSecuencias](/resources/Diagrama de secuencia-requerimientos.jpg "DiagramaDeSecuencias")
 
 
-**Se presentaran a continuacion una enumeracion de los requerimientos funcionales y no funcionales que cumplen y satisfacen nuestro proyecto en su composición, luego de haber descrito el plan de desarrollo**
+**Luego de haber descrito el plan de desarrollo las bases de nuestra aplicacion, presentamos a continuacion una enumeracion de los requerimientos funcionales y no funcionales que cumplen y satisfacen nuestro proyecto en su composición **
  
 ###Requerimientos funcionales 
 -Al inicio de la ejecucion, se debe permitir seleccionar que modelo utilizar a partir de un dropdownbox
@@ -413,7 +413,12 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 
 -El tiempo de respuesta para las interacciones de usuario con los botones del programa no supera los 10 milisegundos
 
--Las pruebas de software se gestionaran usando el testing correspondiente (deberia ser mas especifico aca)
+-Las pruebas de software se gestionaran usando el testing correspondiente.
+
+###Diagrama de arquitectura preliminar
+** Teniendo en cuenta los requisitos mencionados y los casos de usos, detallamos el proyecto en su generalidad**
+
+![DiagramaDeArquitecuraPreliminar](/resources/Diagrama preliminar de arquitectura.jpg "DiagramaDeArquitecuraPreliminar")
 
 ###Matriz de Trazabilidad
 
