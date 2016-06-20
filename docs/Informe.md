@@ -338,7 +338,7 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 
 -No se permite crear mas de un modelo a la vez
 
--La temporizacion permitida por el modelo creado no permite exceder la hora entre turnos
+-La temporizacion del modelo creado debe permitir por lo menos colocar una hora por turno
 
 -El modelo no provee la emision de una señal al terminar la temporizacion
 
@@ -444,3 +444,83 @@ A partir del patron de arquitectura utilizado se detallan los diagramas de compo
 ####Diagrama de Despliegue
 
 ![Diagrama de Despliegue](/resources/Diagrama de despliegue.jpg "Diagrama de Despliegue")
+
+
+#PRUEBAS UNITARIAS Y DE SISTEMA#
+
+###Test Unitarios###
+Se realizó Unit Test sobre todo el codigo creado por nosotros. Para ello se utilizo JUnit 4 y Coverage para medir la covertura de los tests integrados a IntelliJ.
+
+Para correr los test se necesita tener un copilador de Java y ejecutarlos desde la misma, de esa forma saldrá un mensaje detallando los Test que fallaron y los test que fueron exitosos. En nuestro caso se utilizo la aplicación IntelliJ
+
+![test](/resources/test.jpg "Test")
+
+Como se puede observar en la imagen todos nuestros Unit Test pasaron de forma exitosa.
+
+![Test](/resources/test2.jpg "Test")
+
+La cobertura abarcada por los Unit Test fue de todo el código que implementamos, solo quedaron sin testear los metodos de las clases que ya se encontraban implementados en el programa.
+
+Para medir la cobertura se utilizó la herramienta Coverage. Para utilizarla desde IntelliJ, simplemente había que correr los Unit Test con la opción de medir cobertura y se obtuvo los siguientes resultados.
+
+![Cobertura](/resources/coverage.jpg "Cobertura")
+
+Como se puede apreciar en la imagen, **se cubrió el 100% de las clases, métodos y lineas del codigo** implementado por nosotros, a excepción de la clase MyAnotadorTestDrive en la cual solo se encuentra el metodo main() que inicializa el programa. Pero a excepción de ese metodo se cubrio el 100% de todo el codigo implementado.
+
+El **Pass/Fail rate de los Test Unitarios fue del 100%** por lo que podemos decir que en esta sección no se encontro ningún bug. 
+
+
+----------
+###Test de Sistema###
+
+Se realizarán las pruebas de sistemas con respecto a los requerimientos detallados anteriormente:
+
+**Requerimientos funcionales**
+
+- Al inicio de la ejecucion, se debe permitir seleccionar que modelo utilizar a partir de un dropdownbox
+- Para que comience a funcionar bien el modelo requerido, primero es necesario seleccionarlo en el dropdownbox
+![re](/resources/dropdownbox.jpg "re")
+
+- La temporizacion del modelo creado debe permitir por lo menos colocar una hora por turno
+
+- El modelo no provee la emision de una señal al terminar la temporizacion
+- No se permite el pausado del temporizador
+![hora](/resources/hora.jpg "Hora")
+
+- Cada vez que se requiera recomenzar el temporizador se debe presionar el boton ‘set’ cargado con el tiempo (en segundos) que corresponda
+![reinicio](/resources/reinicioTemp.jpg "Reinicio")
+
+- Para resetear el puntaje es necesario reiniciar la ejecucion “seteando” un ‘0’ en el boton de set, ya que no es posible descontar la puntuacion.
+![reinicio](/resources/reinicio.jpg "Reinicio")
+
+**Requerimientos no funcionales**
+
+El programa se testeo en Windows 7 y Windows 10 en las cuales se tenía instalado Java JDK1.8.0 sin ningún problema de compatibilidad.
+
+**Pruebas alternativas de valores criticos**
+
+Se intento ingresar valores negativos de tiempo y el programa siguio funcionando normalmente indicando la cantidad de segundos negativa pero sin realizar ningún tipo de conteo en el temporizador.
+![negativo](/resources/negativo.jpg "Numero negativo")
+
+Se intento ingresar letras en el campo del tiempo y el programa se detuvo durante unos milisegundos, no indica ningún mensaje y al ingresar un tiempo positivo el programa vuelve a funcionar normalmente. Se obtuvieron mensajes de excepción.
+![letras](/resources/letras.jpg "Letras")
+
+Al ingresar un numero demasiado grande el programa no realiza el conteo del temporizador, al volver a ingresar un valor correcto vuelve a funcionar normalmente. Se obtuvieron mensajes de excepción.
+![grande](/resources/numeroalto.jpg "Numero grande")
+
+El **Pass/Fail rate de las Pruebas de Sistema fue del 95%** solo se obtuvieron excepciones al realizar pruebas con valores criticos, pero en general los resultados fueron los esperados. 
+
+----------
+
+
+Para la organización de los bugs o problemas encontrados se utilizó la herramienta Issues incluida en github. El link del mismo es el siguiente:
+
+https://github.com/francovqz/IngSoft-2016-Enigma/issues
+
+Se encontraron entre otros los siguientes bugs o problemas:
+
+- Problema con BeatBar: Se veía el HeartModel en la barra por mas que se estuviese en otro modelo. **CORREGIDO**
+- Excepciones en tiempo de ejecución al correr la implementación del singleton. **CORREGIDO**
+- Errores con gradle al subir el codigo. **CORREGIDO**
+- Errores de travis con los Unit Test: Cuando travis corre el gradle indica que uno de los test falla por un HeadlessException pero al correrlos manualmente los test pasan sin problemas **SIN CORREGIR**
+- Al ingresar caracteres que no son enteros positivos el programa deja de funcionar correctamente. **SIN CORREGIR**
