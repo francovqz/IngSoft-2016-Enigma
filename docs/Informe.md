@@ -575,3 +575,17 @@ Se encontraron entre otros los siguientes bugs o problemas:
 - Errores con gradle al subir el codigo. **CORREGIDO**
 - Errores de travis con los Unit Test: Cuando travis corre el gradle indica que uno de los test falla por un HeadlessException pero al correrlos manualmente los test pasan sin problemas **SIN CORREGIR**
 - Al ingresar caracteres que no son enteros positivos el programa deja de funcionar correctamente. **SIN CORREGIR**
+
+
+
+##Datos Históricos##
+
+El principal inconveniente que tuvimos fue encontrar una idea que se adapte a lo requerido en el trabajo. 
+A partir de plantearnos la idea del anotador, nos fuimos dividiendo las tareas según las aptitudes de cada uno, intentando repartirlas equitativamente y con ello el esfuerzo requerido.
+
+##Información Adicional##
+
+De cada parte del trabajo fuimos afianzando los conocimientos teóricos de la materia. 
+Tuvimos errores a la hora de implementar el patrón Observer, ya que en un principio se nos abrían múltiples ventanas por cada ejecución.
+
+A la hora de desarrollar los diagramas, pusimos demasiados detalles que dificultaban la comprensión. Finalmente, intentamos dejar sólo la información que creíamos relevante para el desarrollo de nuestro modelo. 
