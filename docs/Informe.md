@@ -1,3 +1,29 @@
+<center>
+#Trabajo Final #
+</center>
+<center>
+# Ingeniería de Software #
+</center>
+<center>
+#2016#
+</center>
+<br>
+
+##Grupo Enigma##
+
+
+###Gatica Carolina###
+![caro](/resources/caro.jpg "caro")
+
+###Heredia Marco###
+![marco](/resources/marco.jpg "marco")
+
+###Vazquez Franco###
+![franco](/resources/franco.jpg "franco")
+
+----------
+
+
 <CENTER> 
 # RELEASE NOTES #
 </center>
