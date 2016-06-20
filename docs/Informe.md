@@ -383,9 +383,9 @@ Las reuniones de la CCB se van a realizar 2 veces por semana durante el desarrol
 
 -Las pruebas de software se gestionaran usando el testing correspondiente (deberia ser mas especifico aca)
 
-**Matriz de Trazabilidad**
+###Matriz de Trazabilidad
 
-A partir de los requerimientos y los casos de usos, se establece la siguiente matriz:
+**A partir de los requerimientos y los casos de usos, se establece la siguiente matriz:**
 
 ![MatrizDeTrazabilidad](/resources/Matriz trazabilidad.jpg "MatrizDeTrazabilidad")
 
